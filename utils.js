@@ -1,4 +1,4 @@
-// Copyright (c) 2019, Taegus Cromis, The Conceal Developers
+// Copyright (c) 2019, Taegus Cromis, The Conceal Developers, Cache
 //
 // Please see the included LICENSE file for more information.
 
@@ -9,7 +9,7 @@ const fs = require("fs");
 module.exports = {
   ensureUserDataDir: function () {
     var userDataDir = process.env.APPDATA || (process.platform === "darwin" ? process.env.HOME + "/Library/Application Support" : process.env.HOME + "/.local/share");
-    userDataDir = path.join(userDataDir, "ccxNodePool");
+    userDataDir = path.join(userDataDir, "cxcheNodePool");
 
     if (!fs.existsSync(userDataDir)) {
       shell.mkdir('-p', userDataDir);
