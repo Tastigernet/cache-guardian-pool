@@ -10,7 +10,7 @@ const moment = require('moment');
 const utils = require("./utils.js");
 const cors = require("cors");
 const path = require("path");
-const CXCHE = require("cache-api");
+const CXCHE = require("cache-api-js");
 const fs = require("fs");
 
 // query api timeout
@@ -226,7 +226,7 @@ app.get("/pool/random", listNodesLimiter, (req, res, next) => {
       var randomNode = nodeList[Math.floor(Math.random() * nodeList.length)];
 
       if (randomNode) {
-        res.json({ success: true, url: vsprintf("%s:%d", [(randomNode.url && randomNode.url.host) ? randomNode.url.host : randomNode.nodeHost, (randomNode.url && randomNode.url.port) ? randomNode.url.port : randomNode.nodePort || 40000]) });
+        res.json({ success: true, url: vsprintf("%s:%d", [(randomNode.url && randomNode.url.host) ? randomNode.url.host : randomNode.nodeHost, (randomNode.url && randomNode.url.port) ? randomNode.url.port : randomNode.nodePort || 39000]) });
       } else {
         res.json({ success: false });
       }
