@@ -1,9 +1,12 @@
 {
 	"server": {
-		"port": 3000
+		"port": 5000
 	},
 	"cache": {
 		"expire": 600,
 		"checkPeriod": 120
-	}
+	},
+    "uptime": {
+        "period": 120
+    }
 }

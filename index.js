@@ -226,7 +226,7 @@ app.get("/pool/random", listNodesLimiter, (req, res, next) => {
       var randomNode = nodeList[Math.floor(Math.random() * nodeList.length)];
 
       if (randomNode) {
-        res.json({ success: true, url: vsprintf("%s:%d", [(randomNode.url && randomNode.url.host) ? randomNode.url.host : randomNode.nodeHost, (randomNode.url && randomNode.url.port) ? randomNode.url.port : randomNode.nodePort || 39000]) });
+        res.json({ success: true, url: vsprintf("%s:%d", [(randomNode.url && randomNode.url.host) ? randomNode.url.host : randomNode.nodeHost, (randomNode.url && randomNode.url.port) ? randomNode.url.port : randomNode.nodePort || 38999]) });
       } else {
         res.json({ success: false });
       }
@@ -269,3 +269,4 @@ app.get("/pool/stats", listNodesLimiter, (req, res) => {
 
 // set the interval for the uptime check of all nodes
 setInterval(checkNodesUptimeStatus, config.uptime.period * 1000);
+
